@@ -1,0 +1,70 @@
+version: '3.8'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    container_name: rps_server
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+
+  client1:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: rps_client1
+    depends_on:
+      - server
+    stdin_open: true
+    tty: true
+
+  client2:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: rps_client2
+    depends_on:
+      - server
+    stdin_open: true
+    tty: true
+
+  client3:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: rps_client3
+    depends_on:
+      - server
+    stdin_open: true
+    tty: true
+
+  client4:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: rps_client4
+    depends_on:
+      - server
+    stdin_open: true
+    tty: true
+
+  client5:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: rps_client5
+    depends_on:
+      - server
+    stdin_open: true
+    tty: true
+
+  client6:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: rps_client6
+    depends_on:
+      - server
+    stdin_open: true
+    tty: true
